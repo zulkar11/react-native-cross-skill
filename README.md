@@ -1,7 +1,3 @@
-Upskill: React Native
+# E commerce application development as part of cross skill development.
 
-Objective of this project:
-1. Learn what is React nativw.
-2. How it's work
-3. React native basic component
-4. Call and print data from API
+Author: Zulkar Nayin

@@ -1,28 +1,16 @@
-import {Text, View, TextInput} from 'react-native';
-import {useEffect, useState} from 'react';
-import axios from 'axios';
+import 'react-native-gesture-handler';
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {DrawerNavigator} from './src/navigation/DrawerNavigator';
 
-export default function App() {
-  const [data, setData] = useState<any>();
-
-  useEffect(() => {
-    axios
-      .get('https://jsonplaceholder.typicode.com/todos')
-      .then(response => {
-        console.log(response.data);
-        setData(response.data.title);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
-
+function App(): JSX.Element {
   return (
-    <View>
-      <Text style={{fontSize: 30, textAlign: 'center'}}> Zulkar Nayin </Text>
-      {data.map((item: any) => {
-        return <Text>{item.title}</Text>;
-      })}
-    </View>
+    <>
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
+    </>
   );
 }
+
+export default App;
